@@ -25,9 +25,8 @@ public class BulletCreator : MonoBehaviour
         while (isCoroutineWork)
         {
             Vector3 direction = (_target.position - transform.position).normalized;
-            Vector3 spawnPosition = transform.position + direction;
 
-            GameObject bullet = Instantiate(_bulletPrefab, spawnPosition, Quaternion.identity);
+            GameObject bullet = Instantiate(_bulletPrefab, transform.position + direction, Quaternion.identity);
 
             if (_weaponRigidbody != null)
             {
